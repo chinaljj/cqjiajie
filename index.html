@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>皮大帅 — 个人主页</title>
+<meta name="description" content="一句话介绍你自己">
+<style>
+  :root{
+    --bg:#e9ebee;
+    --ink:#16181c;
+    --muted:#6b7280;
+    --line:#c8ccd2;
+    --accent:#1f4d3d;
+    --card:#f6f7f9;
+  }
+
+  *{box-sizing:border-box}
+
+  html{-webkit-text-size-adjust:100%}
+
+  body{
+    margin:0;
+    min-height:100vh;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    line-height:1.6;
+    display:flex;
+    justify-content:center;
+    padding:clamp(32px,8vw,96px) 24px;
+  }
+
+  .wrap{width:100%;max-width:560px}
+
+  /* ---------- 头部 ---------- */
+  .avatar{
+    width:72px;height:72px;
+    border-radius:50%;
+    background:var(--accent);
+    color:#fff;
+    display:flex;align-items:center;justify-content:center;
+    font-size:26px;font-weight:600;letter-spacing:.02em;
+    margin-bottom:24px;
+    overflow:hidden;
+  }
+  .avatar img{width:100%;height:100%;object-fit:cover}
+
+  h1{
+    font-size:clamp(28px,6vw,38px);
+    font-weight:600;
+    letter-spacing:-.01em;
+    margin:0 0 10px;
+  }
+
+  .bio{
+    color:var(--muted);
+    font-size:15px;
+    margin:0 0 8px;
+    max-width:44ch;
+  }
+
+  .meta{
+    font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+    font-size:12px;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--muted);
+    margin:0;
+  }
+
+  /* ---------- 链接列表 ---------- */
+  .links{
+    margin-top:44px;
+    border-top:1px solid var(--line);
+  }
+
+  .link{
+    display:flex;
+    align-items:baseline;
+    gap:16px;
+    padding:18px 4px;
+    border-bottom:1px solid var(--line);
+    text-decoration:none;
+    color:inherit;
+    transition:padding-left .25s ease, background-color .25s ease;
+  }
+
+  .link:hover,
+  .link:focus-visible{
+    padding-left:14px;
+    background:var(--card);
+  }
+
+  .link:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+  .link-name{font-size:17px;font-weight:500;flex:none}
+
+  .link-note{
+    color:var(--muted);
+    font-size:13px;
+    flex:1;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+  }
+
+  .arrow{
+    color:var(--accent);
+    font-size:15px;
+    opacity:0;
+    transform:translateX(-6px);
+    transition:opacity .25s ease, transform .25s ease;
+  }
+
+  .link:hover .arrow,
+  .link:focus-visible .arrow{opacity:1;transform:translateX(0)}
+
+  /* ---------- 页脚 ---------- */
+  footer{
+    margin-top:56px;
+    font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+    font-size:12px;
+    color:var(--muted);
+    letter-spacing:.04em;
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    *{transition:none !important}
+  }
+</style>
+</head>
+<body>
+  <main class="wrap">
+
+    <!-- 头像：想用图片就把下面这行换成 <img src="avatar.jpg" alt=""> -->
+    <div class="avatar">皮</div>
+
+    <h1>皮大帅</h1>
+    <p class="bio">一句话介绍你自己，说清楚你是谁、在做什么。</p>
+    <p class="meta">重庆 · since 2023</p>
+
+    <nav class="links">
+
+      <a class="link" href="https://space.bilibili.com/" target="_blank" rel="noopener">
+        <span class="link-name">哔哩哔哩</span>
+        <span class="link-note">视频与教程</span>
+        <span class="arrow">→</span>
+      </a>
+
+      <a class="link" href="https://github.com/chinalj" target="_blank" rel="noopener">
+        <span class="link-name">GitHub</span>
+        <span class="link-note">代码与开源项目</span>
+        <span class="arrow">→</span>
+      </a>
+
+      <a class="link" href="#" target="_blank" rel="noopener">
+        <span class="link-name">小红书</span>
+        <span class="link-note">日常记录</span>
+        <span class="arrow">→</span>
+      </a>
+
+      <a class="link" href="#" target="_blank" rel="noopener">
+        <span class="link-name">博客</span>
+        <span class="link-note">长文与思考</span>
+        <span class="arrow">→</span>
+      </a>
+
+      <a class="link" href="mailto:you@example.com">
+        <span class="link-name">邮箱</span>
+        <span class="link-note">合作与联系</span>
+        <span class="arrow">→</span>
+      </a>
+
+    </nav>
+
+    <footer>cqjiajie.com</footer>
+
+  </main>
+</body>
+</html>
